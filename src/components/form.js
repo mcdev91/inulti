@@ -60,14 +60,14 @@ const Checkout = () => {
           <Form.Control onChange={(e) => setFormData({ ...formData, password: e.target.value })} value={formData.password} type="password" />
         </Form.Group>
 
-        <Form.Group className="form-row" controlId="gender">
+        <Form.Group className="form-row" controlId="gender" onChange={(e) => setFormData({ ...formData, gender: e.target.value })} value={formData.gender}>
           <Form.Label>Gender</Form.Label>
           <Row>
             <Col className="checkBox mr">
-              <FormCheck className="checkPaddings" type="radio" name="flexRadioDefault" id="flexRadioDefault1" label="Female" />
+              <FormCheck value="Female" className="checkPaddings" type="radio" name="flexRadioDefault" id="flexRadioDefault1" label="Female" />
             </Col>
             <Col className="checkBox">
-              <FormCheck className="checkPaddings" type="radio" name="flexRadioDefault" id="flexRadioDefault2" label="Male" defaultChecked />
+              <FormCheck value="Male" className="checkPaddings" type="radio" name="flexRadioDefault" id="flexRadioDefault2" label="Male" defaultChecked />
             </Col>
           </Row>
         </Form.Group>
