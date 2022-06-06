@@ -30,14 +30,14 @@ const Checkout = () => {
 
         <Form.Group controlId="fullName">
           <Form.Label>Full Name</Form.Label>
-          <Form.Control onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} value={formData.fullName} type="text" required pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"/>
+          <Form.Control onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} value={formData.fullName} type="text" required pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)" />
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
 
         <Form.Group controlId="email">
           <Form.Label>Email</Form.Label>
-          <Form.Control onChange={(e) => setFormData({ ...formData, email: e.target.value })} value={formData.email} type="email" />
+          <Form.Control onChange={(e) => setFormData({ ...formData, email: e.target.value })} value={formData.email} type="email" pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' />
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
