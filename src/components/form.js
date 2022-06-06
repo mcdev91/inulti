@@ -30,7 +30,7 @@ const Checkout = () => {
 
         <Form.Group controlId="fullName">
           <Form.Label>Full Name</Form.Label>
-          <Form.Control onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} value={formData.fullName} type="text" required />
+          <Form.Control onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} value={formData.fullName} type="text" required pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"/>
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
