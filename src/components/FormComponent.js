@@ -195,9 +195,11 @@ const FormComponent = () => {
         <br />
 
         {/* Submit btn */}
-        <Form.Group>
-          <Button type="submit">Submit</Button>
-        </Form.Group>
+        <div className="text-center">
+          <Form.Group>
+            <Button type="submit">Submit</Button>
+          </Form.Group>
+        </div>
       </Form>
     </div>
   );
