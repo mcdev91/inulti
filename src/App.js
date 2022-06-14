@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Checkout from './components/form';
-import Header from './components/header';
-import Footer from './components/footer';
+import FormComponent from './components/FormComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
   return (
     <div>
-      <Header />
-      <Checkout />
-      <Footer />
+      <HeaderComponent />
+      <FormComponent />
+      <FooterComponent />
     </div>
   );
 }

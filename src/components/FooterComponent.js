@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from 'react-bootstrap';
 
-export default function Footer() {
+export default function FooterComp() {
     return (
         <Navbar className="justify-content-center bg-secondary text-white mt-5">
             <h3 >
