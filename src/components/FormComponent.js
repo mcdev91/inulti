@@ -10,10 +10,18 @@ const FormComponent = () => {
 
   const inputOptions = {
     fullName: {
-      required: "Full Name is required"
+      required: "Full Name is required",
+      pattern: {
+        value:  /([a-zA-Z]+\s){1,}([a-zA-Z]+)/,
+        message: "Name And Female required"
+      }
     },
     email: {
-      required: "Email is required"
+      required: "Email is required",
+      pattern: {
+        value:  /[a-z0-9]+@[a-z]+.[a-z]{2,3}/,
+        message: "Invalid email address"
+      }
     },
     zipCode: {
       required: "Zip Code is required",
@@ -68,6 +76,7 @@ const FormComponent = () => {
             {...register('fullName', inputOptions.fullName)}
             name="fullName"
             type="text"
+            // pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"
           />
           <small className="text-danger">
             {errors?.fullName && errors.fullName.message}
