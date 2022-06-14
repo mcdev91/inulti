@@ -8,18 +8,19 @@ const FormComponent = () => {
   const submitSucced = (data) => console.log(data);
   const handleError = (errors) => { };
 
+  //reiks mesti tolyn ir importuoti
   const inputOptions = {
     fullName: {
       required: "Full Name is required",
       pattern: {
-        value:  /([a-zA-Z]+\s){1,}([a-zA-Z]+)/,
+        value: /([a-zA-Z]+\s){1,}([a-zA-Z]+)/,
         message: "Name And Female required"
       }
     },
     email: {
       required: "Email is required",
       pattern: {
-        value:  /[a-z0-9]+@[a-z]+.[a-z]{2,3}/,
+        value: /[a-z0-9]+@[a-z]+.[a-z]{2,3}/,
         message: "Invalid email address"
       }
     },
@@ -58,6 +59,7 @@ const FormComponent = () => {
 
   };
 
+  //reiks mesti i input options, nereikes viso eilerascio
   const NumericOnly = (e) => {
     const reg = /^[0-9\b]+$/
     let preval = e.target.value
@@ -76,7 +78,7 @@ const FormComponent = () => {
             {...register('fullName', inputOptions.fullName)}
             name="fullName"
             type="text"
-            // pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"
+          // pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"
           />
           <small className="text-danger">
             {errors?.fullName && errors.fullName.message}
@@ -124,9 +126,10 @@ const FormComponent = () => {
         </Form.Group>
 
         {/* gender */}
-        <Form.Group>
+        <Form.Group className="text-center">
+          <div className="mt-2" />
           <Form.Label>Gender</Form.Label>
-          <br />
+          <div className="mt-2" />
           <Form.Check {...register("gender", { required: true })} type="radio" value="Male" label="Male" inline></Form.Check>
           <Form.Check {...register("gender", { required: true })} type="radio" value="Female" label="Female" inline></Form.Check>
           <small className="text-danger">
@@ -164,7 +167,7 @@ const FormComponent = () => {
         {/* expiration date / CVV */}
         <Form.Group className="form-row">
           <Row>
-            <Col className="expirationDate">
+            <Col>
               <Form.Label>Expiration Date</Form.Label>
               <Form.Control
                 {...register('expirationDate', inputOptions.expirationDate)}

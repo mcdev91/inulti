@@ -28,7 +28,7 @@
 .form-row {
   align-items: center;
   justify-content: center;
-  text-align: left!important;
+  text-align: left !important;
 }
 
 .row {
@@ -86,6 +86,16 @@ input[type='radio']:checked:after {
 }
 
 .form-label {
-  margin-bottom: -0.5rem!important;
+  margin-bottom: -0.5rem !important;
   margin-top: 1.0em;
+}
+
+.headerDiv {
+  text-align: center;
+  height: 30px;
+}
+
+.footerDiv {
+  text-align: center;
+  height: 30px;
 }

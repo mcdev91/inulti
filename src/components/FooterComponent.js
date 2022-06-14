@@ -1,12 +1,11 @@
 import React from "react";
-import { Navbar } from 'react-bootstrap';
 
 export default function FooterComp() {
     return (
-        <Navbar className="justify-content-center bg-secondary text-white mt-5">
-            <h3 >
+        <div className="footerDiv mt-5 justify-content-center bg-info text-white">
+            <h4 >
                 Footer
-            </h3>
-        </Navbar>
+            </h4>
+        </div>
     )
 }
