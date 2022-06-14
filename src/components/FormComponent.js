@@ -33,16 +33,16 @@ const FormComponent = () => {
       }
     },
     gender: {
-      required: "U must select gender"
+      required: "You must select"
     },
     cardHolderName: {
-      required: "CHN is required"
+      required: "Card Holder Name is required"
     },
     cardNumber: {
       required: "Card number is required"
     },
     expirationDate: {
-      required: "Exp date is required"
+      required: "Expiration date is required"
     },
     cvv: {
       required: "CVV is required"
@@ -118,8 +118,8 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Gender</Form.Label>
           <br />
-          <Form.Check {...register("Gender", { required: true })} type="radio" value="Male" label="Male" inline></Form.Check>
-          <Form.Check {...register("Gender", { required: true })} type="radio" value="Female" label="Female" inline></Form.Check>
+          <Form.Check {...register("gender", { required: true })} type="radio" value="Male" label="Male" inline></Form.Check>
+          <Form.Check {...register("gender", { required: true })} type="radio" value="Female" label="Female" inline></Form.Check>
           <small className="text-danger">
             {errors?.gender && errors.gender.message}
           </small>
@@ -158,6 +158,8 @@ const FormComponent = () => {
             <Col className="expirationDate">
               <Form.Label>Expiration Date</Form.Label>
               <Form.Control
+                {...register('expirationDate', inputOptions.expirationDate)}
+                name="expirationDate"
                 type="date"
               />
               <small className="text-danger">
@@ -167,6 +169,7 @@ const FormComponent = () => {
             <Col>
               <Form.Label>CVV</Form.Label>
               <Form.Control
+                {...register('cvv', inputOptions.cvv)}
                 onChange={NumericOnly}
                 type="text"
                 maxlength="3"
@@ -177,6 +180,7 @@ const FormComponent = () => {
             </Col>
           </Row>
         </Form.Group>
+        <br />
 
         {/* Submit btn */}
         <Form.Group>
