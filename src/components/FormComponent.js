@@ -5,7 +5,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 
 const FormComponent = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const submitSucced = (data) => console.log(data);
+  const submitSucced = (data) => console.log(data) || alert("data consoleje");
   const handleError = (errors) => { };
 
   //reiks mesti tolyn ir importuoti
