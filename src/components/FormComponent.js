@@ -6,13 +6,18 @@ import InputOptions from './FormInputOptions';
 
 const FormComponent = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const submitSucced = (data) => console.log(data) || alert("data consoleje");
+
+  const submitSucced = (data, e) => {
+    alert(JSON.stringify(data));
+    console.log(data);
+    document.getElementById("checkoutForm").reset();
+  }
+
   const handleError = (errors) => { };
 
   return (
     <div className="container">
-      <Form onSubmit={handleSubmit(submitSucced, handleError)} className="formContainer">
-
+      <Form onSubmit={handleSubmit(submitSucced, handleError)} className="formContainer" id="checkoutForm">
         {/* full name */}
         <Form.Group>
           <Form.Label>Full Name</Form.Label>
@@ -25,7 +30,6 @@ const FormComponent = () => {
             {errors?.fullName && errors.fullName.message}
           </small>
         </Form.Group>
-
         {/* email */}
         <Form.Group>
           <Form.Label>Email</Form.Label>
@@ -38,7 +42,6 @@ const FormComponent = () => {
             {errors?.email && errors.email.message}
           </small>
         </Form.Group>
-
         {/* zip code */}
         <Form.Group>
           <Form.Label>Zip Code</Form.Label>
@@ -46,12 +49,12 @@ const FormComponent = () => {
             {...register('zipCode', InputOptions.zipCode)}
             name="zipCode"
             type="text"
+            maxLength="5"
           />
           <small className="text-danger">
             {errors?.zipCode && errors.zipCode.message}
           </small>
         </Form.Group>
-
         {/* birthday */}
         <Form.Group>
           <Form.Label>Birth Day</Form.Label>
@@ -64,7 +67,6 @@ const FormComponent = () => {
             {errors?.birthDay && errors.birthDay.message}
           </small>
         </Form.Group>
-
         {/* gender */}
         <Form.Group className="text-center">
           <div className="mt-2" />
@@ -88,7 +90,6 @@ const FormComponent = () => {
             {errors?.gender && errors.gender.message}
           </small>
         </Form.Group>
-
         {/* card holder name */}
         <Form.Group>
           <Form.Label>Card Holder Name</Form.Label>
@@ -101,7 +102,6 @@ const FormComponent = () => {
             {errors?.cardHolderName && errors.cardHolderName.message}
           </small>
         </Form.Group>
-
         {/* card number */}
         <Form.Group>
           <Form.Label>Card Number</Form.Label>
@@ -109,12 +109,12 @@ const FormComponent = () => {
             {...register('cardNumber', InputOptions.cardNumber)}
             name="cardNumber"
             type="text"
+            maxLength="10"
           />
           <small className="text-danger">
             {errors?.cardNumber && errors.cardNumber.message}
           </small>
         </Form.Group>
-
         {/* expiration date / CVV */}
         <Form.Group className="form-row">
           <Row>
@@ -135,7 +135,7 @@ const FormComponent = () => {
               <Form.Control
                 {...register('cvv', InputOptions.cvv)}
                 type="text"
-                maxlength="3"
+                maxLength="3"
               />
               <small className="text-danger">
                 {errors?.cvv && errors.cvv.message}
@@ -144,11 +144,14 @@ const FormComponent = () => {
           </Row>
         </Form.Group>
         <br />
-
         {/* Submit btn */}
         <div className="text-center">
           <Form.Group>
-            <Button type="submit">Submit</Button>
+            <Button
+              type="submit"
+            >
+              Submit
+            </Button>
           </Form.Group>
         </div>
       </Form>

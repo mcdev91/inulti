@@ -1,12 +1,11 @@
-.appPage {
-  display: inline-flexbox;
-}
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .formContainer {
@@ -101,9 +100,9 @@ input[type='radio']:checked:after {
 }
 
 .colFix {
-  width: 95%!important;
+  width: 95% !important;
 }
 
 .fomrCheck {
-  background-color: blue!important;
+  background-color: blue !important;
 }
