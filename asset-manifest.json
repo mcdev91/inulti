@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/inulti_uzduotis/static/css/main.0da608e2.css",
-    "main.js": "/inulti_uzduotis/static/js/main.9fa23277.js",
+    "main.css": "/inulti_uzduotis/static/css/main.90723a49.css",
+    "main.js": "/inulti_uzduotis/static/js/main.ea5a0e41.js",
     "index.html": "/inulti_uzduotis/index.html",
-    "main.0da608e2.css.map": "/inulti_uzduotis/static/css/main.0da608e2.css.map",
-    "main.9fa23277.js.map": "/inulti_uzduotis/static/js/main.9fa23277.js.map"
+    "main.90723a49.css.map": "/inulti_uzduotis/static/css/main.90723a49.css.map",
+    "main.ea5a0e41.js.map": "/inulti_uzduotis/static/js/main.ea5a0e41.js.map"
   },
   "entrypoints": [
-    "static/css/main.0da608e2.css",
-    "static/js/main.9fa23277.js"
+    "static/css/main.90723a49.css",
+    "static/js/main.ea5a0e41.js"
   ]
 }
