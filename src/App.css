@@ -99,3 +99,11 @@ input[type='radio']:checked:after {
   text-align: center;
   height: 30px;
 }
+
+.colFix {
+  width: 95%!important;
+}
+
+.fomrCheck {
+  background-color: blue!important;
+}

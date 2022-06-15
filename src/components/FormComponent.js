@@ -9,14 +9,6 @@ const FormComponent = () => {
   const submitSucced = (data) => console.log(data) || alert("data consoleje");
   const handleError = (errors) => { };
 
-  //reiks mesti i input options, nereikes viso eilerascio
-  const NumericOnly = (e) => {
-    const reg = /^[0-9\b]+$/
-    let preval = e.target.value
-    if (e.target.value === '' || reg.test(e.target.value)) return true
-    else e.target.value = preval.substring(0, (preval.length - 1))
-  }
-
   return (
     <div className="container">
       <Form onSubmit={handleSubmit(submitSucced, handleError)} className="formContainer">
@@ -28,7 +20,6 @@ const FormComponent = () => {
             {...register('fullName', InputOptions.fullName)}
             name="fullName"
             type="text"
-          // pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"
           />
           <small className="text-danger">
             {errors?.fullName && errors.fullName.message}
@@ -53,7 +44,6 @@ const FormComponent = () => {
           <Form.Label>Zip Code</Form.Label>
           <Form.Control
             {...register('zipCode', InputOptions.zipCode)}
-            onChange={NumericOnly}
             name="zipCode"
             type="text"
           />
@@ -80,8 +70,20 @@ const FormComponent = () => {
           <div className="mt-2" />
           <Form.Label>Gender</Form.Label>
           <div className="mt-2" />
-          <Form.Check {...register("gender", { required: true })} type="radio" value="Male" label="Male" inline></Form.Check>
-          <Form.Check {...register("gender", { required: true })} type="radio" value="Female" label="Female" inline></Form.Check>
+          <Form.Check
+            {...register("gender", { required: true })}
+            type="radio"
+            value="Male"
+            label="Male"
+            inline>
+          </Form.Check>
+          <Form.Check
+            {...register("gender", { required: true })}
+            type="radio"
+            value="Female"
+            label="Female"
+            inline>
+          </Form.Check>
           <small className="text-danger">
             {errors?.gender && errors.gender.message}
           </small>
@@ -105,7 +107,6 @@ const FormComponent = () => {
           <Form.Label>Card Number</Form.Label>
           <Form.Control
             {...register('cardNumber', InputOptions.cardNumber)}
-            onChange={NumericOnly}
             name="cardNumber"
             type="text"
           />
@@ -121,6 +122,7 @@ const FormComponent = () => {
               <Form.Label>Expiration Date</Form.Label>
               <Form.Control
                 {...register('expirationDate', InputOptions.expirationDate)}
+                className="colFix"
                 name="expirationDate"
                 type="date"
               />
@@ -129,10 +131,9 @@ const FormComponent = () => {
               </small>
             </Col>
             <Col>
-              <Form.Label>CVV</Form.Label>
+              <Form.Label className="colFix">CVV</Form.Label>
               <Form.Control
                 {...register('cvv', InputOptions.cvv)}
-                onChange={NumericOnly}
                 type="text"
                 maxlength="3"
               />

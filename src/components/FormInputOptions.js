@@ -1,12 +1,6 @@
 let FullNamePattern = /([a-zA-Z]+\s){1,}([a-zA-Z]+)/;
 let EmailPattern = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
-
-const NumericOnly = (e) => {
-    const reg = /^[0-9\b]+$/
-    let preval = e.target.value
-    if (e.target.value === '' || reg.test(e.target.value)) return true
-    else e.target.value = preval.substring(0, (preval.length - 1))
-}
+let OnlyNumbers = /^[0-9\b]+$/;
 
 const inputOptions = {
     fullName: {
@@ -28,6 +22,10 @@ const inputOptions = {
         minLength: {
             value: 5,
             message: "At least 5 digits"
+        },
+        pattern: {
+            value: OnlyNumbers,
+            message: "Only Numbers Requireq"
         }
     },
     birthDay: {
@@ -47,13 +45,21 @@ const inputOptions = {
         required: "Card Holder Name is required"
     },
     cardNumber: {
-        required: "Card number is required"
+        required: "Card number is required",
+        pattern: {
+            value: OnlyNumbers,
+            message: "Only Numbers Requireq"
+        }
     },
     expirationDate: {
         required: "Expiration date is required"
     },
     cvv: {
         required: "CVV is required",
+        pattern: {
+            value: OnlyNumbers,
+            message: "Only Numbers Requireq"
+        }
     }
 };
 
