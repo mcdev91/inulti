@@ -8,9 +8,9 @@ import FooterComponent from './components/FooterComponent';
 function App() {
   return (
     <div>
-      <HeaderComponent />
+      {/* <HeaderComponent /> */}
       <FormComponent />
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </div>
   );
 }

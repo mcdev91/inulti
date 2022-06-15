@@ -2,62 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import InputOptions from './FormInputOptions';
 
 const FormComponent = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const submitSucced = (data) => console.log(data) || alert("data consoleje");
   const handleError = (errors) => { };
-
-  //reiks mesti tolyn ir importuoti
-  const inputOptions = {
-    fullName: {
-      required: "Full Name is required",
-      pattern: {
-        value: /([a-zA-Z]+\s){1,}([a-zA-Z]+)/,
-        message: "Name And Female required"
-      }
-    },
-    email: {
-      required: "Email is required",
-      pattern: {
-        value: /[a-z0-9]+@[a-z]+.[a-z]{2,3}/,
-        message: "Invalid email address"
-      }
-    },
-    zipCode: {
-      required: "Zip Code is required",
-      minLength: {
-        value: 5,
-        message: "At least 5 digits"
-      }
-    },
-    birthDay: {
-      required: "Birth Day is required"
-    },
-    password: {
-      required: "Password is required",
-      minLength: {
-        value: 8,
-        message: "Password must have at least 8 characters"
-      }
-    },
-    gender: {
-      required: "You must select"
-    },
-    cardHolderName: {
-      required: "Card Holder Name is required"
-    },
-    cardNumber: {
-      required: "Card number is required"
-    },
-    expirationDate: {
-      required: "Expiration date is required"
-    },
-    cvv: {
-      required: "CVV is required"
-    }
-
-  };
 
   //reiks mesti i input options, nereikes viso eilerascio
   const NumericOnly = (e) => {
@@ -75,7 +25,7 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Full Name</Form.Label>
           <Form.Control
-            {...register('fullName', inputOptions.fullName)}
+            {...register('fullName', InputOptions.fullName)}
             name="fullName"
             type="text"
           // pattern="([a-zA-Z]+\s){1,}([a-zA-Z]+)"
@@ -89,7 +39,7 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Email</Form.Label>
           <Form.Control
-            {...register('email', inputOptions.email)}
+            {...register('email', InputOptions.email)}
             name="email"
             type="email"
           />
@@ -102,7 +52,7 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Zip Code</Form.Label>
           <Form.Control
-            {...register('zipCode', inputOptions.zipCode)}
+            {...register('zipCode', InputOptions.zipCode)}
             onChange={NumericOnly}
             name="zipCode"
             type="text"
@@ -116,7 +66,7 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Birth Day</Form.Label>
           <Form.Control
-            {...register('birthDay', inputOptions.birthDay)}
+            {...register('birthDay', InputOptions.birthDay)}
             name="birthDay"
             type="date"
           />
@@ -141,7 +91,7 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Card Holder Name</Form.Label>
           <Form.Control
-            {...register('cardHolderName', inputOptions.cardHolderName)}
+            {...register('cardHolderName', InputOptions.cardHolderName)}
             name="cardHolderName"
             type="text"
           />
@@ -154,7 +104,7 @@ const FormComponent = () => {
         <Form.Group>
           <Form.Label>Card Number</Form.Label>
           <Form.Control
-            {...register('cardNumber', inputOptions.cardNumber)}
+            {...register('cardNumber', InputOptions.cardNumber)}
             onChange={NumericOnly}
             name="cardNumber"
             type="text"
@@ -170,7 +120,7 @@ const FormComponent = () => {
             <Col>
               <Form.Label>Expiration Date</Form.Label>
               <Form.Control
-                {...register('expirationDate', inputOptions.expirationDate)}
+                {...register('expirationDate', InputOptions.expirationDate)}
                 name="expirationDate"
                 type="date"
               />
@@ -181,7 +131,7 @@ const FormComponent = () => {
             <Col>
               <Form.Label>CVV</Form.Label>
               <Form.Control
-                {...register('cvv', inputOptions.cvv)}
+                {...register('cvv', InputOptions.cvv)}
                 onChange={NumericOnly}
                 type="text"
                 maxlength="3"
